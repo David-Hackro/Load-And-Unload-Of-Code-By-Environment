@@ -41,7 +41,7 @@ class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationReposito
 
 # Diagram
 
-![English Diagram](english_diagram.svg)
+![English Diagram](english_diagram.png)
 
 ## Potential Uses
 
