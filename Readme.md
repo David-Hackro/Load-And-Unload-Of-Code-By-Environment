@@ -1,23 +1,23 @@
-Aquí está la versión actualizada del documento:
+Here is the translated version:
 
-# Magic Trick One - Configuración Dinámica en Android
+# Magic Trick One - Dynamic Configuration in Android
 
-Este proyecto demuestra una técnica esencial para cargar código de manera dinámica según el entorno de desarrollo (debug/release) en una aplicación Android. La implementación se realiza mediante el uso de Dagger, un framework de inyección de dependencias ampliamente utilizado en el desarrollo Android.
+This project demonstrates an essential technique for dynamically loading code based on the development environment (debug/release) in an Android application. The implementation is carried out using Dagger, a widely used dependency injection framework in Android development.
 
-## Estructura del Proyecto
+## Project Structure
 
-- **`com.david.hackro.di.magic.trick.one`**: Contiene la interfaz `IConfigurationRepository`, que define el contrato para obtener el texto actual.
-- **`com.david.hackro.di.magic.trick.one.di`**: Este paquete es el hogar del módulo Dagger `ExampleModule`, que proporciona la implementación concreta de `IConfigurationRepository` basándose en el entorno de desarrollo.
+- **`com.david.hackro.di.magic.trick.one`**: Contains the interface `IConfigurationRepository`, defining the contract to retrieve the current text.
+- **`com.david.hackro.di.magic.trick.one.di`**: This package is home to the Dagger module `ExampleModule`, providing the concrete implementation of `IConfigurationRepository` based on the development environment.
 
-## Lógica y Coherencia en los Paquetes
+## Logic and Consistency in Packages
 
-**La coherencia en los nombres de los paquetes es de suma importancia para el funcionamiento correcto de Dagger**. Esto asegura que, durante la inyección de dependencias, Dagger pueda identificar de manera efectiva las clases y módulos correspondientes al contexto de ejecución.
+**Consistency in package names is crucial for Dagger's proper functioning**. This ensures that, during dependency injection, Dagger can effectively identify classes and modules corresponding to the execution context.
 
-Por ejemplo, la clase `ExampleModule` en el paquete `com.david.hackro.di.magic.trick.one.di` proporciona la implementación concreta de `IConfigurationRepository`. Al estar en el entorno de desarrollo, Dagger busca esta implementación dentro del mismo paquete. La consistencia en la estructura garantiza que Dagger encuentre la implementación correcta sin conflictos.
+For example, the class `ExampleModule` in the package `com.david.hackro.di.magic.trick.one.di` provides the concrete implementation of `IConfigurationRepository`. When in the development environment, Dagger searches for this implementation within the same package. Consistency in structure guarantees that Dagger finds the correct implementation without conflicts.
 
-## Código en Debug
+## Code in Debug
 
-Dentro del paquete `com.david.hackro.di.magic.trick.one.configuration`, encontramos la implementación específica para el entorno de depuración (`Debug`). A pesar de compartir el mismo nombre de clase (`ConfigurationRepositoryImpl`), no hay conflicto debido a que están contenidas en diferentes paquetes.
+Within the package `com.david.hackro.di.magic.trick.one.configuration`, we find the specific implementation for the debugging environment (`Debug`). Despite sharing the same class name (`ConfigurationRepositoryImpl`), there is no conflict because they are contained in different packages.
 
 ```kotlin
 class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationRepository {
@@ -27,9 +27,9 @@ class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationReposito
 }
 ```
 
-## Código en Release
+## Code in Release
 
-En el mismo paquete `com.david.hackro.di.magic.trick.one.configuration`, existe otra implementación específica para el entorno de lanzamiento (`Release`). Aunque ambas implementaciones comparten el mismo nombre de clase, Dagger las maneja sin conflicto al considerar el contexto del paquete.
+In the same package `com.david.hackro.di.magic.trick.one.configuration`, there is another specific implementation for the release environment (`Release`). Although both implementations share the same class name, Dagger handles them without conflict by considering the package context.
 
 ```kotlin
 class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationRepository {
@@ -39,22 +39,22 @@ class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationReposito
 }
 ```
 
-## Posibilidades de Utilidad
+## Potential Uses
 
-### Entorno de Pruebas Unitarias Mejorado
+### Enhanced Unit Testing Environment
 
-Dinámicamente ajusta la configuración del entorno de pruebas unitarias para utilizar mocks específicos o configuraciones optimizadas para pruebas.
+Dynamically adjusts the configuration of the unit testing environment to use specific mocks or optimized settings for tests.
 
-### Control de Funciones Experimentales
+### Experimental Feature Control
 
-Habilita o deshabilita características experimentales de la aplicación según el entorno, facilitando la gestión de funciones aún en desarrollo.
+Enables or disables experimental features of the application based on the environment, facilitating the management of features still in development.
 
-### Personalización de la Interfaz de Usuario para Desarrolladores
+### Developer Interface Customization
 
-Permite a los desarrolladores personalizar la interfaz de usuario en el entorno de depuración para facilitar la inspección y depuración.
+Allows developers to customize the user interface in the debugging environment to facilitate inspection and debugging.
 
-## Adaptable a Distintos "Flavors"
+## Adaptable to Different Flavors
 
-Este enfoque puede ajustarse fácilmente a los diferentes "flavors" de la aplicación. Al definir configuraciones específicas para cada "flavor", se logra una mayor flexibilidad en la personalización del comportamiento según los distintos contextos de desarrollo o despliegue.
+This approach can be easily adapted to different flavors of the application. By defining specific configurations for each flavor, greater flexibility is achieved in customizing behavior based on different development or deployment contexts.
 
-Si tienes más preguntas o necesitas más ayuda, no dudes en preguntar. ¡Feliz desarrollo!
+If you have further questions or need more assistance, feel free to ask. Happy development!

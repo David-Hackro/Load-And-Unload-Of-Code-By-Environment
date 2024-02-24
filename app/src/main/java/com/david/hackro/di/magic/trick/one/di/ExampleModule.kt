@@ -8,9 +8,12 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+// Dagger Module for providing dependencies related to IConfigurationRepository
 @Module
 @InstallIn(SingletonComponent::class)
 internal class ExampleModule {
+
+    // Provides a singleton instance of IConfigurationRepository using ConfigurationRepositoryImpl
     @Provides
     @Singleton
     fun provideRepository(): IConfigurationRepository = ConfigurationRepositoryImpl()
