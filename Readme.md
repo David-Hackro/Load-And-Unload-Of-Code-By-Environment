@@ -4,6 +4,11 @@ Here is the translated version:
 
 This project demonstrates an essential technique for dynamically loading code based on the development environment (debug/release) in an Android application. The implementation is carried out using Dagger, a widely used dependency injection framework in Android development.
 
+# Diagram
+
+![English Diagram](english_diagram.png)
+
+
 ## Project Structure
 
 - **`com.david.hackro.di.magic.trick.one`**: Contains the interface `IConfigurationRepository`, defining the contract to retrieve the current text.
@@ -38,10 +43,6 @@ class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationReposito
     }
 }
 ```
-
-# Diagram
-
-![English Diagram](english_diagram.png)
 
 ## Potential Uses
 
