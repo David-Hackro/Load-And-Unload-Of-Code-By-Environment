@@ -39,9 +39,9 @@ class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationReposito
 }
 ```
 
-#Diagram
+# Diagram
 
-[![](https://mermaid.ink/img/pako:eNqdksFqwzAMhl9F6NSy5gXM6KXdoYdd2h4NRYvVzCyxg2yPli7vPid0hLJlrLtJ_L8_WT-6YOkNo8KyphDWliqhRjuAoYfNyrujrZJQtN5tufXBRi9nuPQegAeoOK6SCLu451OczRXsolhX9Xqn3Yh6OlHT1vzsTap5fN-Kf7eGR3SPmBr7DTrh2-RJhzW_pOofH_2NueWaKfBd1MkMHz-K4jaW3n6bU1Es_7CkglKYIgewLkRyJcNsUOb3E79W_Il51TIVF9iwNGRNvp0hDY3xlRvWqHJpSN40atdlH6Xod2dXooqSeIGpNRl7PTVUR6oDd58PnOgT?type=png)](https://mermaid.live/edit#pako:eNqdksFqwzAMhl9F6NSy5gXM6KXdoYdd2h4NRYvVzCyxg2yPli7vPid0hLJlrLtJ_L8_WT-6YOkNo8KyphDWliqhRjuAoYfNyrujrZJQtN5tufXBRi9nuPQegAeoOK6SCLu451OczRXsolhX9Xqn3Yh6OlHT1vzsTap5fN-Kf7eGR3SPmBr7DTrh2-RJhzW_pOofH_2NueWaKfBd1MkMHz-K4jaW3n6bU1Es_7CkglKYIgewLkRyJcNsUOb3E79W_Il51TIVF9iwNGRNvp0hDY3xlRvWqHJpSN40atdlH6Xod2dXooqSeIGpNRl7PTVUR6oDd58PnOgT)}
+![English Diagram](english_diagram.svg)
 
 ## Potential Uses
 
