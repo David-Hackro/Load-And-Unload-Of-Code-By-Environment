@@ -1,9 +1,9 @@
 
 Aquí está la versión actualizada del documento:
 
-# Magic Trick One - Configuración Dinámica en Android
+# Configuración Dinámica en Android
 
-Este proyecto demuestra una técnica esencial para cargar código de manera dinámica según el entorno de desarrollo (debug/release) en una aplicación Android. La implementación se realiza mediante el uso de Dagger, un framework de inyección de dependencias ampliamente utilizado en el desarrollo Android.
+Este proyecto demuestra una técnica esencial para cargar código de manera dinámica según el entorno de desarrollo (debug/release) en una aplicación Android. La implementación se realiza mediante el uso de Hilt, un framework de inyección de dependencias ampliamente utilizado en el desarrollo Android.
 
 # Diagrama
 
@@ -13,13 +13,13 @@ Este proyecto demuestra una técnica esencial para cargar código de manera din�
 ## Estructura del Proyecto
 
 - **`com.david.hackro.di.magic.trick.one`**: Contiene la interfaz `IConfigurationRepository`, que define el contrato para obtener el texto actual.
-- **`com.david.hackro.di.magic.trick.one.di`**: Este paquete es el hogar del módulo Dagger `ExampleModule`, que proporciona la implementación concreta de `IConfigurationRepository` basándose en el entorno de desarrollo.
+- **`com.david.hackro.di.magic.trick.one.di`**: Este paquete es el hogar del módulo Hilt `ExampleModule`, que proporciona la implementación concreta de `IConfigurationRepository` basándose en el entorno de desarrollo.
 
 ## Lógica y Coherencia en los Paquetes
 
-**La coherencia en los nombres de los paquetes es de suma importancia para el funcionamiento correcto de Dagger**. Esto asegura que, durante la inyección de dependencias, Dagger pueda identificar de manera efectiva las clases y módulos correspondientes al contexto de ejecución.
+**La coherencia en los nombres de los paquetes es de suma importancia para el funcionamiento correcto de Hilt**. Esto asegura que, durante la inyección de dependencias, Hilt pueda identificar de manera efectiva las clases y módulos correspondientes al contexto de ejecución.
 
-Por ejemplo, la clase `ExampleModule` en el paquete `com.david.hackro.di.magic.trick.one.di` proporciona la implementación concreta de `IConfigurationRepository`. Al estar en el entorno de desarrollo, Dagger busca esta implementación dentro del mismo paquete. La consistencia en la estructura garantiza que Dagger encuentre la implementación correcta sin conflictos.
+Por ejemplo, la clase `ExampleModule` en el paquete `com.david.hackro.di.magic.trick.one.di` proporciona la implementación concreta de `IConfigurationRepository`. Al estar en el entorno de desarrollo, Hilt busca esta implementación dentro del mismo paquete. La consistencia en la estructura garantiza que Hilt encuentre la implementación correcta sin conflictos.
 
 ## Código en Debug
 
@@ -35,7 +35,7 @@ class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationReposito
 
 ## Código en Release
 
-En el mismo paquete `com.david.hackro.di.magic.trick.one.configuration`, existe otra implementación específica para el entorno de lanzamiento (`Release`). Aunque ambas implementaciones comparten el mismo nombre de clase, Dagger las maneja sin conflicto al considerar el contexto del paquete.
+En el mismo paquete `com.david.hackro.di.magic.trick.one.configuration`, existe otra implementación específica para el entorno de lanzamiento (`Release`). Aunque ambas implementaciones comparten el mismo nombre de clase, Hilt las maneja sin conflicto al considerar el contexto del paquete.
 
 ```kotlin
 class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationRepository {
