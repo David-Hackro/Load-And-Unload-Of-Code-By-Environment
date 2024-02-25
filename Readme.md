@@ -2,7 +2,7 @@ Here is the translated version:
 
 # Dynamic Configuration in Android
 
-This project demonstrates an essential technique for dynamically loading code based on the development environment (debug/release) in an Android application. The implementation is carried out using Dagger, a widely used dependency injection framework in Android development.
+This project demonstrates an essential technique for dynamically loading code based on the development environment (debug/release) in an Android application. The implementation is carried out using Hilt, a widely used dependency injection framework in Android development.
 
 # Diagram
 
@@ -12,13 +12,13 @@ This project demonstrates an essential technique for dynamically loading code ba
 ## Project Structure
 
 - **`com.david.hackro.di.magic.trick.one`**: Contains the interface `IConfigurationRepository`, defining the contract to retrieve the current text.
-- **`com.david.hackro.di.magic.trick.one.di`**: This package is home to the Dagger module `ExampleModule`, providing the concrete implementation of `IConfigurationRepository` based on the development environment.
+- **`com.david.hackro.di.magic.trick.one.di`**: This package is home to the Hilt module `ExampleModule`, providing the concrete implementation of `IConfigurationRepository` based on the development environment.
 
 ## Logic and Consistency in Packages
 
-**Consistency in package names is crucial for Dagger's proper functioning**. This ensures that, during dependency injection, Dagger can effectively identify classes and modules corresponding to the execution context.
+**Consistency in package names is crucial for Hilt's proper functioning**. This ensures that, during dependency injection, Hilt can effectively identify classes and modules corresponding to the execution context.
 
-For example, the class `ExampleModule` in the package `com.david.hackro.di.magic.trick.one.di` provides the concrete implementation of `IConfigurationRepository`. When in the development environment, Dagger searches for this implementation within the same package. Consistency in structure guarantees that Dagger finds the correct implementation without conflicts.
+For example, the class `ExampleModule` in the package `com.david.hackro.di.magic.trick.one.di` provides the concrete implementation of `IConfigurationRepository`. When in the development environment, Hilt searches for this implementation within the same package. Consistency in structure guarantees that Hilt finds the correct implementation without conflicts.
 
 ## Code in Debug
 
@@ -34,7 +34,7 @@ class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationReposito
 
 ## Code in Release
 
-In the same package `com.david.hackro.di.magic.trick.one.configuration`, there is another specific implementation for the release environment (`Release`). Although both implementations share the same class name, Dagger handles them without conflict by considering the package context.
+In the same package `com.david.hackro.di.magic.trick.one.configuration`, there is another specific implementation for the release environment (`Release`). Although both implementations share the same class name, Hilt handles them without conflict by considering the package context.
 
 ```kotlin
 class ConfigurationRepositoryImpl @Inject constructor() : IConfigurationRepository {
