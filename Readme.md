@@ -1,6 +1,6 @@
 Here is the translated version:
 
-# Magic Trick One - Dynamic Configuration in Android
+# Dynamic Configuration in Android
 
 This project demonstrates an essential technique for dynamically loading code based on the development environment (debug/release) in an Android application. The implementation is carried out using Dagger, a widely used dependency injection framework in Android development.
 
