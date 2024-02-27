@@ -4,9 +4,7 @@ Here is the translated version:
 
 This project demonstrates an essential technique for dynamically loading code based on the development environment (debug/release) in an Android application. The implementation is carried out using Hilt, a widely used dependency injection framework in Android development.
 
-# Diagram
-
-![English Diagram](english_diagram.png)
+![enviroments](https://github.com/David-Hackro/Load-And-Unload-Of-Code-By-Environment/assets/4633870/463a6bd7-85fd-4502-bcdf-3b95f05ab91a)
 
 
 ## Project Structure
@@ -19,6 +17,11 @@ This project demonstrates an essential technique for dynamically loading code ba
 **Consistency in package names is crucial for Hilt's proper functioning**. This ensures that, during dependency injection, Hilt can effectively identify classes and modules corresponding to the execution context.
 
 For example, the class `ExampleModule` in the package `com.david.hackro.di.magic.trick.one.di` provides the concrete implementation of `IConfigurationRepository`. When in the development environment, Hilt searches for this implementation within the same package. Consistency in structure guarantees that Hilt finds the correct implementation without conflicts.
+
+# Diagram
+
+![English Diagram](english_diagram.png)
+
 
 ## Code in Debug
 
